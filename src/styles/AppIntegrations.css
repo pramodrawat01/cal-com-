@@ -1,0 +1,20 @@
+
+.integration-grid {
+  background-image:
+    linear-gradient(to right, #dedede 1px, transparent 1px),
+    linear-gradient(to bottom, #dedede 1px, transparent 1px);
+  background-size: 25% 50%;
+  background-position: 0 0;
+}
+
+.integration-icon {
+  transition:
+    left 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    top 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .integration-icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,149 @@
+
+/* Benefits section animations */
+
+@keyframes bookingFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Feature tiles: reveal descriptions on hover/focus */
+.feature-description {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    max-height 350ms ease,
+    margin-top 300ms ease,
+    opacity 250ms ease,
+    transform 300ms ease;
+}
+
+.feature-tile:hover .feature-description,
+.feature-tile:focus-visible .feature-description {
+  max-height: 100px;
+  margin-top: 10px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shrink the icon tile when its description appears */
+.feature-tile:hover .feature-icon-box,
+.feature-tile:focus-visible .feature-icon-box {
+  width: 48px;
+  height: 48px;
+}
+
+/* Dots that travel from the center to the card corners */
+.feature-corner {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    top 600ms ease,
+    left 600ms ease,
+    opacity 250ms ease;
+}
+
+.feature-tile:hover .feature-corner,
+.feature-tile:focus-visible .feature-corner {
+  opacity: 1;
+}
+
+.feature-tile:hover .feature-corner-tl,
+.feature-tile:focus-visible .feature-corner-tl {
+  top: 12px;
+  left: 12px;
+}
+
+.feature-tile:hover .feature-corner-tr,
+.feature-tile:focus-visible .feature-corner-tr {
+  top: 12px;
+  left: calc(100% - 12px);
+}
+
+.feature-tile:hover .feature-corner-bl,
+.feature-tile:focus-visible .feature-corner-bl {
+  top: calc(100% - 12px);
+  left: 12px;
+}
+
+.feature-tile:hover .feature-corner-br,
+.feature-tile:focus-visible .feature-corner-br {
+  top: calc(100% - 12px);
+  left: calc(100% - 12px);
+}
+
+/* Static dots on the icon box */
+.feature-icon-box > .relative {
+  position: relative;
+}
+
+.icon-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d0d0d0;
+}
+
+.icon-dot-tl {
+  top: 8px;
+  left: 8px;
+}
+
+.icon-dot-tr {
+  top: 8px;
+  right: 8px;
+}
+
+.icon-dot-bl {
+  bottom: 8px;
+  left: 8px;
+}
+
+.icon-dot-br {
+  right: 8px;
+  bottom: 8px;
+}
+
+
+/* Responsive mockup heights */
+@media (min-width: 768px) {
+  .benefit-mockup-space {
+    min-height: 300px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .feature-tile,
+  .feature-description,
+  .feature-icon-box,
+  .feature-corner {
+    transition: none !important;
+  }
+
+  .animate-\[bookingFade_500ms_ease_both\],
+  .animate-\[bookingFade_350ms_ease_both\] {
+    animation: none !important;
+  }
+}

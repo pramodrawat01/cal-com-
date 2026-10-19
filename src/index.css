@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #252525;
+  background: #f5f5f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+@keyframes bookingFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------- brand carousel section animation  */
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee-track {
+  animation: brand-marquee 35s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
+  }
+}
+
+
+
+/* -------------------------- how it works section animation */
+
+/* Calendar integrations orbit around the center */
+.calendar-orbit {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.calendar-orbit-one {
+  animation: calendar-orbit-spin 12s linear infinite;
+}
+
+.calendar-orbit-two {
+  animation: calendar-orbit-spin 12s linear infinite;
+}
+
+.calendar-orbit-three {
+  animation: calendar-orbit-spin 12s linear infinite;
+  
+}
+
+.calendar-orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eeeeee;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+}
+
+/* Each icon follows a different circular path */
+.calendar-orbit-one .calendar-orbit-icon {
+  transform: translate(-50%, -50%) translateY(-90px);
+}
+
+.calendar-orbit-two .calendar-orbit-icon {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(-90px);
+}
+
+.calendar-orbit-three .calendar-orbit-icon {
+  transform: translate(-50%, -50%) rotate(240deg) translateY(-90px);
+}
+
+@keyframes calendar-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Meeting participant's circular background grows and collapses */
+.meeting-avatar-halo {
+  animation: meeting-halo-pulse 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes meeting-halo-pulse {
+  0%,
+  100% {
+    transform: scale(0.65);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .calendar-orbit,
+  .meeting-avatar-halo {
+    animation: none;
+  }
+}
