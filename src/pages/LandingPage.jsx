@@ -1,4 +1,3 @@
-
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import SectionDivider from "../components/layout/SectionDivider";
@@ -32,29 +31,30 @@ export default function LandingPage() {
 
           {/* Additional landing-page sections */}
           <HowItWorks />
-          <SectionDivider/>
+          <SectionDivider />
 
-          <Benefits/>
-          <SectionDivider/>
-          <Testimonials/>
-          <SectionDivider/>
-          <AppIntegrations/>
-          <SectionDivider/>
-          <WallOfLove/>
-          <SectionDivider/>
-          <FAQ/>
-           {/* Brand carousel */}
+          <Benefits />
+          <SectionDivider />
+          <Testimonials />
+          <SectionDivider />
+          <AppIntegrations />
+          <SectionDivider />
+          <WallOfLove />
+          <SectionDivider />
+          <FAQ />
+          {/* Brand carousel */}
           <SectionDivider />
           <BrandCarousel />
           <SectionDivider />
-          <SchedulingCTA/>
+          <SchedulingCTA />
           {/* Add more sections here as you build them */}
           {/* <Features /> */}
           {/* <Testimonials /> */}
           {/* <CTASection /> */}
         </main>
-        <SectionDivider/>
-
+        <SectionDivider />
+      </div>
+      <div className="lg:px-38">
         <Footer />
       </div>
     </div>

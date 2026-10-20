@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import PricingPage from "./pages/PricingPage";
 import EnterprisePage from "./pages/EnterprisePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Signup from "./pages/Signup";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/enterprise" element={<EnterprisePage />} />
+      <Route path="/signup" element={<Signup/>} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

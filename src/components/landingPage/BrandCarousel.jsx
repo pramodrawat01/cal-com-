@@ -21,7 +21,7 @@ const brands = [
     className: "text-[25px] font-bold tracking-[-1px]",
   },
   {
-    name: "⚡ supabase",
+    name: " supabase",
     className: "text-[22px] font-bold tracking-[-1px]",
   },
   {
